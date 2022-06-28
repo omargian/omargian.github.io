@@ -1,60 +1,33 @@
-gsap.registerPlugin(Observer);
+// gsap.to()... infinity and beyond!
+// for more check out greensock.com
+gsap.registerPlugin(ScrollTrigger);
 
-let sections = document.querySelectorAll("section"),
-    images = document.querySelectorAll(".bg"),
-    headings = gsap.utils.toArray(".section-heading"),
-    outerWrappers = gsap.utils.toArray(".outer"),
-    innerWrappers = gsap.utils.toArray(".inner"),
-    splitHeadings = headings.map(heading => new SplitText(heading, { type: "chars,words,lines", linesClass: "clip-text"})),
-    currentIndex = -5,
-    wrap = gsap.utils.wrap(0, sections.length - 5),
-    animating;
+ScrollTrigger.defaults({
+  // Defaults are used by all ScrollTriggers
+  toggleActions: "restart pause resume pause", // Scoll effect Forward, Leave, Back, Back Leave
+  markers: true, // Easaly remove markers for production.
 
-gsap.set(outerWrappers, { yPercent: 100 });
-gsap.set(innerWrappers, { yPercent: -100 });
-
-function gotoSection(index, direction) {
-  index = wrap(index); // make sure it's valid
-  animating = true;
-  let fromTop = direction === -1,
-      dFactor = fromTop ? -1 : 1,
-      tl = gsap.timeline({
-        defaults: {duration: 1.25, ease: "power1.inOut"},
-        onComplete: () => animating = false,
-      });
-  if (currentIndex >= 0) { // The first time this function runs, current is -1
-    gsap.set(sections[currentIndex], { zIndex: 0 });
-    tl.to(images[currentIndex], { yPercent: -15 * dFactor })
-      .set(sections[currentIndex], { autoAlpha: 0 });
-  }
-  gsap.set(sections[index], { autoAlpha: 1, zIndex: 1 });
-  tl.fromTo([outerWrappers[index], innerWrappers[index]], {yPercent: i => i ? -100 * dFactor : 100 * dFactor}, { yPercent: 0 }, 0)
-    .fromTo(images[index], { yPercent: 15 * dFactor }, { yPercent: 0 }, 0)
-    .fromTo(splitHeadings[index].chars, {autoAlpha: 0, yPercent: 150 * dFactor}, {
-        autoAlpha: 1,
-        yPercent: 0,
-        duration: 1,
-        ease: "power2",
-        stagger: {
-          each: 0.02,
-          from: "random"
-        }
-      }, 0.2);
-  
-  currentIndex = index;
-}
-
-Observer.create({
-  type: "wheel,touch,pointer",
-  wheelSpeed: -1,
-  onDown: () => {
-    !animating && gotoSection(currentIndex - 1, -1)
-  },
-  onUp: () => {
-    !animating && gotoSection(currentIndex + 1, 1)
-  },
-  tolerance: 10,
-  preventDefault: true,
 });
 
-gotoSection(0, 1);
+const timelineHeader = gsap.timeline({
+  scrollTrigger: {
+    id: "ZOOM", // Custom label to the marker
+    trigger: "#home", // What element triggers the scroll
+    scrub: true, // Add a small delay of scrolling and animation. `true` is direct
+    start: "top top", // Start at top of Trigger and at the top of the viewport
+    end: "+=100% 0px", // The element is 500px hight and end 50px from the top of the viewport
+    pin: true // Pin the element true or false
+  } });
+
+
+timelineHeader.
+to(".homeSlider", {
+  scale: 1.5 },
+"sameTime").
+to(".homeSliderReveal", {
+  scale: 3 },
+"sameTime");
+
+ScrollTrigger.create({
+  snap: 0.333
+})
