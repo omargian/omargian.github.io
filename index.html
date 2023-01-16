@@ -1,17 +1,236 @@
-		<div class="fullpagecontainer3">
-		<section id="home" class="section">
-			<div class="homeWrapper">
-				<div class="homeSlider homesections"><img src="https://uploads-ssl.webflow.com/5cff83ac2044e22cb8cf2f11/5cffeaf7b3cb0ed2d33f7943_hero.jpg" alt="">
-			</div>
-				<div class="homeSliderReveal homesections">
-					<img src="https://uploads-ssl.webflow.com/5cff83ac2044e22cb8cf2f11/5d13364599bb70e3560cc4e5_background-min 3.png" alt="" width="100%"></div>
-		</section>
-		<section id="about" class="section">
-			SECTION 2
-		</section>
-		<section id="about2" class="section">
-			SECTION 3
-		</section>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+  .body{
+    background: black;
+    color: #ffffff;
+  }
+  .image-gallery-stw{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+</style>
+</head>
+<body class="bg-dark">
+  
+  <div class="container-xl border-top mt-5 pt-5 bg-dark">
+
+    <h4 class="text-start text-white pb-5">Galería de imágenes en cuadrícula a carrusel de pantalla completa</h4>
+      <!-- Three columns of text below the carousel -->
+      <div class="row g-1 mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="col"> 
+            <img class="image-gallery-stw" src="img/1.jpg" alt="" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0">
+        </div><!-- /.col-lg-4 -->
+        <div class="col"> 
+            <img class="image-gallery-stw" src="img/2.jpeg" alt="" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1">
+        </div><!-- /.col-lg-4 -->
+        <div class="col"> 
+            <img class="image-gallery-stw" src="img/3.jpeg" alt="" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2">
+        </div><!-- /.col-lg-4 -->
+  
+      </div><!-- /.row -->
+      <div class="row g-1 mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="col"> 
+            <img class="image-gallery-stw" src="img/4.jpeg" alt="" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3">
+        </div><!-- /.col-lg-4 -->
+        <div class="col"> 
+            <img class="image-gallery-stw" src="img/5.jpeg" alt="" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4">
+        </div><!-- /.col-lg-4 -->
+        <div class="col"> 
+            <img class="image-gallery-stw" src="img/6.jpg" alt="" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5">
+        </div><!-- /.col-lg-4 -->
+  
+      </div><!-- /.row -->
+      <div class="row g-1 mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="col"> 
+            <img class="image-gallery-stw" src="img/7.jpg" alt="" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6">
+        </div><!-- /.col-lg-4 -->
+        <div class="col"> 
+            <img class="image-gallery-stw" src="img/8.jpeg" alt="" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7">
+        </div><!-- /.col-lg-4 -->
+        <div class="col"> 
+            <img class="image-gallery-stw" src="img/9.jpeg" alt="" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8">
+        </div><!-- /.col-lg-4 -->
+   
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  
+    <!--MODAL SLIDER COROUSEL-->
+  <!-- Button trigger modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-white">
+  <!-- carousel -->          
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner" style="max-height:550px">
+      <div class="carousel-item active">
+              <div class="row">
+                    <div class="col-md-6">
+                      <img src="img/1.jpg" class="img-fluid d-block w-100 h-100" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="text-start fs-2 mt-5"><span style="color:red">LA BANDA</span></h3>
+                        <p class="card-text">
+                          Las intervenciones de la banda son bloques dinámicos dirigidos a adultos jóvenes, somos una banda
+                          de pop con la capacidad de fusionar diferentes estilos musicales, desde rock, pop, reggaetón y
+                        </p>
+                    </div>
+                </div>
+      </div>
+      <div class="carousel-item">            
+              <div class="row">
+                    <div class="col-md-6">
+                      <img src="img/2.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="text-start fs-2 mt-5"><span style="color:red">LA BANDA</span></h3>
+                        <p class="card-text">
+                          Las intervenciones de la banda son bloques dinámicos dirigidos a adultos jóvenes, somos una banda
+                          de pop con la capacidad de fusionar diferentes estilos musicales, desde rock, pop, reggaetón y
+                        </p>
+                    </div>
+                </div>        
+      </div>
+      <div class="carousel-item">              
+              <div class="row">
+                    <div class="col-md-6">
+                      <img src="img/3.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="text-start fs-2 mt-5"><span style="color:red">LA BANDA</span></h3>
+                        <p class="card-text">
+                          Las intervenciones de la banda son bloques dinámicos dirigidos a adultos jóvenes, somos una banda
+                          de pop con la capacidad de fusionar diferentes estilos musicales, desde rock, pop, reggaetón y
+                        </p>
+                    </div>
+                </div>         
+      </div>
+      <div class="carousel-item">                
+              <div class="row">
+                    <div class="col-md-6">
+                      <img src="img/4.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="text-start fs-2 mt-5"><span style="color:red">LA BANDA</span></h3>
+                        <p class="card-text">
+                          Las intervenciones de la banda son bloques dinámicos dirigidos a adultos jóvenes, somos una banda
+                          de pop con la capacidad de fusionar diferentes estilos musicales, desde rock, pop, reggaetón y
+                        </p>
+                    </div>
+                </div>       
+      </div>
+      <div class="carousel-item">           
+              <div class="row">
+                    <div class="col-md-6">
+                      <img src="img/5.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="text-start fs-2 mt-5"><span style="color:red">LA BANDA</span></h3>
+                        <p class="card-text">
+                          Las intervenciones de la banda son bloques dinámicos dirigidos a adultos jóvenes, somos una banda
+                          de pop con la capacidad de fusionar diferentes estilos musicales, desde rock, pop, reggaetón y
+                        </p>
+                    </div>
+                </div>           
+      </div>
+      <div class="carousel-item">             
+              <div class="row">
+                    <div class="col-md-6">
+                      <img src="img/6.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="text-start fs-2 mt-5"><span style="color:red">LA BANDA</span></h3>
+                        <p class="card-text">
+                          Las intervenciones de la banda son bloques dinámicos dirigidos a adultos jóvenes, somos una banda
+                          de pop con la capacidad de fusionar diferentes estilos musicales, desde rock, pop, reggaetón y
+                        </p>
+                    </div>
+                </div>
+      </div>
+      <div class="carousel-item">              
+              <div class="row">
+                    <div class="col-md-6">
+                      <img src="img/7.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="text-start fs-2 mt-5"><span style="color:red">LA BANDA</span></h3>
+                        <p class="card-text">
+                          Las intervenciones de la banda son bloques dinámicos dirigidos a adultos jóvenes, somos una banda
+                          de pop con la capacidad de fusionar diferentes estilos musicales, desde rock, pop, reggaetón y
+                        </p>
+                    </div>
+                </div>     
+      </div>
+      <div class="carousel-item">               
+              <div class="row">
+                    <div class="col-md-6">
+                      <img src="img/8.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="text-start fs-2 mt-5"><span style="color:red">LA BANDA</span></h3>
+                        <p class="card-text">
+                          Las intervenciones de la banda son bloques dinámicos dirigidos a adultos jóvenes, somos una banda
+                          de pop con la capacidad de fusionar diferentes estilos musicales, desde rock, pop, reggaetón y
+                        </p>
+                    </div>
+                </div>         
+      </div>
+      <div class="carousel-item">
+              <div class="row">
+                    <div class="col-md-6">
+                      <img src="img/9.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="text-start fs-2 mt-5"><span style="color:red">LA BANDA</span></h3>
+                        <p class="card-text">
+                          Las intervenciones de la banda son bloques dinámicos dirigidos a adultos jóvenes, somos una banda
+                          de pop con la capacidad de fusionar diferentes estilos musicales, desde rock, pop, reggaetón y
+                        </p>
+                    </div>
+                </div>
+      </div>
+    </div>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+          <!-- carousel -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--MODAL SLIDER COROUSEL-->
+  
+<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
